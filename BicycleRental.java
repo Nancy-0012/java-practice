@@ -10,6 +10,14 @@ public class BicycleRental{
         start= y.nextInt();
         System.out.println("enter the ending hour: ");
         end= y.nextInt();
+        //check is the input is correct
+        if(start<0|| start>23){
+            System.out.println("invalid starting hour");
+        }
+    else if(end<1|| end>24){
+        System.out.println("invalid ending hour");
+    }
+    else {
         for(int i=start; i<end;i++){
             if(i<7){
                 rate=500;
@@ -23,14 +31,12 @@ public class BicycleRental{
              else if(i<21){
                 rate=1000;
              }
-             else if(i<24){
-                rate=500;
-             }
              else {
-                rate= 0;
+                rate=500;
              }
              total=total+rate;
         }
+    }
 System.out.println("Total amount to be paid is: "+total+"RWF");
     }
 }
